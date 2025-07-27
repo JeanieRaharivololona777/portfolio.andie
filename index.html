@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jeanie Andrea - Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f7fa;
+      color: #2c3e50;
+    }
+
+    header {
+      background: linear-gradient(120deg, #2c3e50, #4ca1af);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      border-left: 5px solid #4ca1af;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .contact, .langues, .interets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact div, .langues div, .interets div {
+      flex: 1 1 200px;
+      margin-top: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      .contact, .langues, .interets {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jeanie Andréa Raharivololona</h1>
+    <p>Community Manager & Responsable Boutique</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Profil</h2>
+      <p>
+        Déterminée, sérieuse, autonome et consciente du travail qui m'attend,
+        je suis persuadée que je serais un élément moteur au sein de votre structure.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div><strong>Adresse :</strong><br>254b Ambatomalaza, Alasora, MADAGASCAR</div>
+        <div><strong>Email :</strong><br>jeanieraharivololona@gmail.com</div>
+        <div><strong>Téléphone :</strong><br>+261 33 85 006 89</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Compétences</h2>
+      <ul>
+        <li>Informatique bureautique</li>
+        <li>Maîtrise du logiciel Odoo</li>
+        <li>Utilisation de TPE</li>
+        <li>Maîtrise de Canva</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Formation</h2>
+      <ul>
+        <li><strong>BTS Gestion et Management</strong> – 2015 à 2016</li>
+        <li><strong>Baccalauréat Série A1</strong> – 2013</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Expériences Professionnelles</h2>
+
+      <h3>Community Manager en ligne <small>(Juillet 2024 – Aujourd’hui)</small></h3>
+      <ul>
+        <li>Réalisation de la veille concurrentielle et réputationnelle</li>
+        <li>Stratégie marketing digitale et animation des réseaux</li>
+        <li>Création de contenus, planification et publications</li>
+        <li>Gestion de la communauté et collaborations influenceurs</li>
+      </ul>
+
+      <h3>Responsable Boutique & Caissière <small>(Juillet 2022 – Juillet 2024)</small></h3>
+      <ul>
+        <li>Accueil client, gestion de caisse et supervision du personnel</li>
+        <li>Gestion des stocks et de l'approvisionnement</li>
+        <li>Planification des horaires et tâches administratives</li>
+        <li>Community management de la page entreprise</li>
+      </ul>
+
+      <h3>Caissière <small>(Mai 2021 – Février 2022)</small></h3>
+      <ul>
+        <li>Encaissement, enregistrement et gestion des achats</li>
+        <li>Suivi des transactions et clôture de caisse</li>
+        <li>Gestion des litiges et relation client</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Langues</h2>
+      <div class="langues">
+        <div><strong>Français :</strong> Avancé</div>
+        <div><strong>Anglais :</strong> Moyen</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Centres d'intérêt</h2>
+      <div class="interets">
+        <div>Cuisine</div>
+        <div>Chant</div>
+        <div>Voyage</div>
+        <div>Réseaux sociaux</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jeanie Andrea | Portfolio personnel</p>
+    <p>Réalisé avec ❤️ en HTML/CSS</p>
+  </footer>
+
+</body>
+</html>
