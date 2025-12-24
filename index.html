@@ -1,330 +1,567 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeanie Andrea Raharivololona — CV Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Portfolio — Jeanie Andrea Raharivololona</title>
+  <meta name="description" content="Portfolio de Community Manager & Digital Projects Specialist — Social Media, Storytelling, Analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Polices modernes et lisibles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #222;
-      --muted: #555;
-      --accent: #3b82f6;
-      --card: #f9fafb;
-      --border: #e5e7eb;
-      --radius: 12px;
-      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    :root{
+      --bg:#0f1420;
+      --text:#e9eef7;
+      --muted:#b8c2d6;
+      --accent:#6ee7b7; /* vert tendre */
+      --accent-2:#60a5fa; /* bleu doux */
+      --surface:#141a29;
+      --chip:#1c2436;
+      --danger:#ef4444;
+      --ok:#22c55e;
     }
-    body {margin:0;font-family: Inter, sans-serif;color:var(--text);background:var(--bg);display:flex;}
-    aside {
-      width:260px;background:var(--card);border-right:1px solid var(--border);
-      padding:24px;position:fixed;height:100%;box-shadow:var(--shadow);
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif}
+    a{color:var(--accent-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    /* Layout */
+    header{
+      position:sticky;top:0;z-index:30;
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(20,26,41,.65);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .avatar {
-      width:80px;height:80px;border-radius:50%;
-      object-fit:cover;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    .nav{
+      max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+      padding:12px 20px;
     }
-    .name {font-size:18px;font-weight:700;}
-    .role {color:var(--muted);margin-bottom:20px;}
-    .btn {display:block;margin:8px 0;padding:10px 14px;border-radius:var(--radius);text-align:center;text-decoration:none;font-weight:600;}
-    .btn.primary {color:#fff;background:var(--accent);}
-    .btn.secondary {background:#fff;color:var(--accent);border:1px solid var(--accent);}
-    nav {margin-top:30px;}
-    nav a {display:block;padding:8px 0;color:var(--text);text-decoration:none;font-weight:500;}
-    nav a:hover {color:var(--accent);}
-    main {margin-left:260px;padding:40px;flex:1;}
-    section {margin-bottom:40px;background:var(--card);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);}
-    h2 {margin-top:0;color:var(--accent);}
-    footer {text-align:center;color:var(--muted);margin-top:40px;}
-    .lang-toggle {display:flex;gap:6px;margin-bottom:20px;}
-    .lang-toggle button {flex:1;padding:6px;border:1px solid var(--accent);border-radius:var(--radius);background:#fff;color:var(--accent);cursor:pointer;font-weight:600;}
-    .lang-toggle button.active {background:var(--accent);color:#fff;}
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{
+      width:40px;height:40px;border-radius:50%;background:#2b364d;border:2px solid rgba(255,255,255,.08);
+      background-image:url('https://via.placeholder.com/160'); /* Remplacer par ta photo */
+      background-size:cover;background-position:center;
+    }
+    .brand h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.2px}
+    .brand span{font-size:12px;color:var(--muted)}
+    .nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .nav li a{padding:8px 10px;border-radius:8px;display:inline-block}
+    .nav li a:hover{background:rgba(255,255,255,.06)}
+    .lang-toggle{
+      display:flex;align-items:center;gap:8px;background:var(--chip);border:1px solid rgba(255,255,255,.08);
+      color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer
+    }
+
+    /* Hero */
+    .hero{
+      max-width:1060px;margin:0 auto;padding:48px 20px 28px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center
+    }
+    .headline{padding:16px 0}
+    .headline h2{font-family:"Playfair Display",serif;font-size:40px;line-height:1.15;margin:0 0 10px}
+    .headline p{color:var(--muted);margin:0 0 16px;font-size:16px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);
+      background:var(--surface);color:var(--text);font-weight:600
+    }
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#081019;border:none}
+    .btn-outline{background:transparent}
+    .hero-card{
+      background:radial-gradient(1100px 500px at 10% -10%, rgba(96,165,250,.15) 0%, rgba(110,231,183,.06) 24%, transparent 70%), var(--surface);
+      border:1px solid rgba(255,255,255,.08);padding:16px;border-radius:16px
+    }
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mini{
+      background:var(--chip);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px
+    }
+    .mini h5{margin:0 0 6px;font-size:13px;color:var(--muted)}
+    .mini p{margin:0;font-size:14px}
+
+    /* Sections */
+    section{max-width:1060px;margin:0 auto;padding:32px 20px}
+    h3{font-size:22px;margin:0 0 14px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{
+      background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px
+    }
+    .list{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{
+      background:var(--chip);border:1px solid rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;font-size:14px
+    }
+
+    /* Project gallery */
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .figure{
+      background:var(--chip);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden
+    }
+    .fig-img{aspect-ratio:16/9;background:#0b1020 url('https://via.placeholder.com/800x450') center/cover}
+    .fig-body{padding:12px}
+    .fig-title{font-weight:700;margin:0 0 6px}
+    .fig-link{font-size:14px;color:var(--accent-2)}
+
+    /* Contact */
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    form{display:grid;gap:12px}
+    input,textarea{
+      background:#0d1426;border:1px solid rgba(255,255,255,.12);color:var(--text);
+      padding:10px 12px;border-radius:10px;font-size:14px
+    }
+    textarea{min-height:120px;resize:vertical}
+    .success,.error{
+      display:none;margin-top:8px;padding:8px 12px;border-radius:10px;font-size:14px
+    }
+    .success{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#8cf0b1}
+    .error{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:#ffb4b4}
+
+    /* Footer */
+    footer{padding:28px 20px;margin-top:10px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
+    .socials{display:flex;gap:10px;flex-wrap:wrap}
+    .socials a{background:var(--chip);border:1px solid rgba(255,255,255,.08);padding:8px 12px;border-radius:999px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-card{order:-1}
+      .grid-2{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .contact-wrap{grid-template-columns:1fr}
+    }
+    /*.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.slide.active {
+  display: block;
+}*/
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+
   </style>
 </head>
 <body>
-  <aside>
-    <!-- Photo de profil Google Drive: utilisez uc?export=view&id=... 
-   <img class="avatar" 
-     src="https://drive.google.com/uc?export=view&id=19iPK2oCoOTVSMpRQztdEArjLLjJ-krWH" 
-     alt="Profile photo of Jeanie Andrea Raharivololona">-->
-
-    <div class="name" id="name">Jeanie Andrea RAHARIVOLOLONA</div>
-    <div class="role" id="role">Community Manager & Digital Projects</div>
-
-    <!-- Bouton bilingue -->
-    <div class="lang-toggle" role="group" aria-label="Language toggle">
-      <button class="active" data-lang="en" aria-pressed="true">EN</button>
-      <button data-lang="fr" aria-pressed="false">FR</button>
-      <button data-lang="de" aria-pressed="false">DE</button>
+  <!-- Navigation -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1 id="brand-name">Jeanie Andrea Raharivololona</h1>
+          <span id="brand-role">Community Manager & Digital Projects Specialist</span>
+        </div>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#home" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+          <li><a href="#tools" data-i18n="nav.tools">Outils</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" id="langToggle" aria-label="Basculer la langue">FR / EN</button>
     </div>
+  </header>
 
-    <a class="btn primary" href="mailto:jeanieraharivololona@gmail.com" id="btnContact">Contact me</a>
-    <a class="btn secondary" href="https://drive.google.com/file/d/1IcSPlQRK3fNk_T2Q8cvLn5dkYAyZfDkf/view?usp=sharing" target="_blank" id="btnViewCV">📄 View CV</a>
-    <a class="btn secondary" href="https://drive.google.com/uc?export=download&id=1IcSPlQRK3fNk_T2Q8cvLn5dkYAyZfDkf" id="btnDownloadCV">⬇️ Download CV</a>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="headline">
+      <h2 data-i18n="hero.title">Community Manager social media — Spécialité Instagram & YouTube</h2>
+      <p data-i18n="hero.subtitle">Je crée des contenus qui développent la visibilité, engagent les communautés et transforment l’attention en action.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact" data-i18n="hero.cta">Discutons d’un projet</a>
+        <a class="btn btn-outline" href="cv-jeanie-andrea-en.pdf" download data-i18n="hero.download">Télécharger mon CV (EN)</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/jeanie-raharivololona" target="_blank" rel="noopener">LinkedIn</a>
+        <!--<a class="btn btn-outline" href="https://www.upwork.com/" target="_blank" rel="noopener">Upwork</a>-->
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-grid">
+        <div class="mini">
+          <h5 data-i18n="hero.stat1.title">Portée</h5>
+          <p><strong>+30%</strong> <span data-i18n="hero.stat1.body">d’abonnés en 18 mois (TrueConvos)</span></p>
+        </div>
+        <div class="mini">
+          <h5 data-i18n="hero.stat2.title">Spécialités</h5>
+          <p>Instagram · YouTube · Storytelling · Reels</p>
+        </div>
+        <div class="mini">
+          <h5 data-i18n="hero.stat3.title">Secteurs</h5>
+          <p>Méditation · Bien-être · Communautés</p>
+        </div>
+        <div class="mini">
+          <h5 data-i18n="hero.stat4.title">Langues</h5>
+          <p>Français · English</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <nav>
-      <a href="#profile" id="navProfile">Profile</a>
-      <a href="#skills" id="navSkills">Key Skills</a>
-      <a href="#experience" id="navExperience">Professional Experience</a>
-      <a href="#education" id="navEducation">Education</a>
-      <a href="#tech" id="navTech">Technical Skills</a>
-      <a href="#languages" id="navLanguages">Languages</a>
-      <a href="#interests" id="navInterests">Interests</a>
-    </nav>
-  </aside>
-
-  <main>
-    <section id="profile">
-      <h2 id="profileTitle">Profile</h2>
-      <p id="profileText">
-        Community Manager specialized in digital communication, content strategy, and data organization. Experienced in managing online communities, conducting competitive monitoring, and implementing marketing campaigns. Recognized for rigor, organizational skills, and adaptability. Open to B2B prospecting and data cleaning roles where accuracy and reliability are essential. Ready to support businesses with accurate data management and impactful digital strategies.
+  <!-- À propos -->
+  <section id="about">
+    <h3 data-i18n="about.title">À propos de moi</h3>
+    <div class="card">
+      <p data-i18n="about.body">
+        Community manager passionnée par la création de contenus engageants. J’aide les marques à développer leur visibilité et leur communauté sur les réseaux sociaux, avec un focus sur Instagram et YouTube.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2 id="skillsTitle">Key Skills</h2>
-      <p id="skillsText">
-        · Community Management & Digital Communication.<br>
-        · Content Creation & Social Media Strategy.<br>
-        · Competitive and Market Intelligence.<br>
-        · Organization & Time Management.<br>
-        · Data Cleaning & Database Management.<br>
-        · Tools: Odoo ERP, Canva, Microsoft Office Suite (Word, Excel, PowerPoint), POS/TPE Handling.
-      </p>
-    </section>
+  <!-- Compétences -->
+  <section id="skills">
+    <h3 data-i18n="skills.title">Compétences clés</h3>
+    <div class="card">
+      <div class="list">
+        <span class="chip" data-i18n="skills.1">Gestion de pages Instagram et YouTube</span>
+        <span class="chip" data-i18n="skills.2">Création de contenu (posts, storytelling, reels)</span>
+        <span class="chip" data-i18n="skills.3">Rédaction de légendes engageantes</span>
+        <span class="chip" data-i18n="skills.4">Calendrier éditorial</span>
+        <span class="chip" data-i18n="skills.5">Analyse des statistiques</span>
+        <span class="chip" data-i18n="skills.6">Modération et réponses aux messages</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience">
-      <h2 id="experienceTitle">Professional Experience</h2>
-      <p id="experienceRole"><strong>Community Manager (Online)</strong> — July 2024 - Present</p>
-      <p id="experienceText">
-        · Conducted competitive and market monitoring to strengthen brand reputation.<br>
-        · Developed and implemented marketing and communication strategies.<br>
-        · Animated and engaged online communities across multiple platforms.<br>
-        · Planned and scheduled posts to optimize visibility.<br>
-        · Designed influence strategies to grow audience and impact.<br>
-        · Data cleaning/organization.
-      </p>
-    </section>
+  <!-- Outils -->
+  <section id="tools">
+    <h3 data-i18n="tools.title">Outils utilisés</h3>
+    <div class="card">
+      <div class="list">
+        <span class="chip">Canva</span>
+        <span class="chip">Meta Business Suite</span>
+        <span class="chip">CapCut</span>
+        <span class="chip">Shotcut</span>
+        <span class="chip">Slack</span>
+        <span class="chip">YouTube Studio</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="education">
-      <h2 id="educationTitle">Education</h2>
-      <p id="educationText">
-        <strong>BTS in Business Management (2015–2016)</strong><br>
-        · Business & Human Resources Management, Team Leadership, Professional Communication, Quality Management, Client Orientation.<br><br>
-        <strong>Baccalauréat Série A1 (2013)</strong>
-      </p>
-    </section>
+  <!-- Projets -->
+  <section id="projects">
+    <h3 data-i18n="projects.title">Projet & réalisation</h3>
+    <div class="grid-2">
+      <div class="card">
+        <p><strong>TrueConvos — Instagram & YouTube</strong></p>
+        <p data-i18n="projects.role"><strong>Rôle :</strong> Community Manager Social Media</p>
+        <p data-i18n="projects.goal"><strong>Objectif :</strong> Guider les utilisateurs vers la méditation, favoriser la paix intérieure et inciter les abonnés à rejoindre le groupe de méditation TrueConvos.</p>
+        <p data-i18n="projects.result"><strong>Résultat :</strong> +30 % d’abonnés en 18 mois</p>
+      </div>
+      <div class="card">
+        <p data-i18n="projects.preview">Aperçu visuel — Avant & Après</p>
+        <div class="gallery">
+  <!-- Figure: Avant -->
+  <div class="figure">
+    <div class="slider fade">
+      <!-- Slide 1 (Drive link you provided) -->
+      <div class="slide active">
+        <img src="images_1.JPG" alt="Avant — Image 1">
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="images_2.JPG" alt="Avant — Image 2">
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="images_3.JPG" alt="Avant — Image 3">
+      </div>
+    </div>
+    <div class="fig-body">
+      <p class="fig-title">Instagram Reel — Meditation Tip #1</p>
+      <a class="fig-link" href="https://www.instagram.com/trueconvos/reel/C3F2D7oqGqU/" target="_blank" rel="noopener">Voir le reel</a>
+    </div>
+  </div>
 
-    <section id="tech">
-      <h2 id="techTitle">Technical Skills</h2>
-      <p id="techText">
-        · Microsoft Office Suite (Word, Excel, PowerPoint).<br>
-        · Odoo ERP System.<br>
-        · Canva, Capcut, Shotcut (Design & Content Creation).<br>
-        · POS/TPE Handling.<br>
-        · Slack.
-      </p>
-    </section>
+  <!-- Figure: Après -->
+  <div class="figure">
+    <div class="slider fade">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <img src="1_images.JPG" alt="Après — Image 1">
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="2_images.JPG" alt="Après — Image 2">
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="3_images.JPG" alt="Après — Image 3">
+      </div>
+    </div>
+    <div class="fig-body">
+      <p class="fig-title">Instagram Reel — Storytelling</p>
+      <a class="fig-link" href="https://www.instagram.com/trueconvos/reel/DOowudJCiNr/" target="_blank" rel="noopener">Voir le reel</a>
+    </div>
+  </div>
+</div>
 
-    <section id="languages">
-      <h2 id="languagesTitle">Languages</h2>
-      <p id="languagesText">
-        · French: Fluent<br>
-        · English: Fluent
-      </p>
-    </section>
 
-    <section id="interests">
-      <h2 id="interestsTitle">Interests</h2>
-      <p id="interestsText">
-        · Cooking | Singing | Traveling | Social Media
-      </p>
-    </section>
+          <!--<div class="figure">
+            <div class="fig-img" style="background-image:url('https://via.placeholder.com/800x450?text=Avant+-+TrueConvos');"></div>
+            <div class="fig-body">
+              <p class="fig-title">Instagram Reel — Meditation Tip #1</p>
+              <a class="fig-link" href="https://www.instagram.com/trueconvos/reel/C3F2D7oqGqU/" target="_blank" rel="noopener">Voir le reel</a>
+            </div>
+          </div>
+          <div class="figure">
+            <div class="fig-img" style="background-image:url('https://via.placeholder.com/800x450?text=Apr%C3%A8s+-+TrueConvos');"></div>
+            <div class="fig-body">
+              <p class="fig-title">Instagram Reel — Storytelling</p>
+              <a class="fig-link" href="https://www.instagram.com/trueconvos/reel/DOowudJCiNr/" target="_blank" rel="noopener">Voir le reel</a>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer id="footerText">
-      © 2025 Jeanie Andrea Raharivololona — Open to Community Management, Data Cleaning, and B2B Prospecting roles.
-    </footer>
-  </main>
+  <!-- Contact -->
+  <section id="contact">
+    <h3 data-i18n="contact.title">Contact</h3>
+    <div class="contact-wrap">
+      <div class="card">
+        <p><strong data-i18n="contact.email.label">Email :</strong> <a href="mailto:jeanieraharivololona@gmail.com">jeanieraharivololona@gmail.com</a></p>
+        <p><strong>WhatsApp :</strong> Andie Andrea</p>
+        <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/jeanie-raharivololona" target="_blank" rel="noopener">Jeanie Raharivololona</a></p>
+      </div>
+      <div class="card">
+        <form id="contactForm" autocomplete="on" novalidate>
+          <label for="name" data-i18n="form.name">Nom</label>
+          <input id="name" name="name" type="text" placeholder="Votre nom" required />
+
+          <label for="email" data-i18n="form.email">Email</label>
+          <input id="email" name="email" type="email" placeholder="vous@example.com" required />
+
+          <label for="message" data-i18n="form.message">Message</label>
+          <textarea id="message" name="message" placeholder="Décrivez votre besoin (plateforme, audience, objectifs)..." required></textarea>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn-primary" type="submit" data-i18n="form.submit">Envoyer</button>
+            <button class="btn btn-outline" type="reset" data-i18n="form.reset">Réinitialiser</button>
+          </div>
+
+          <div class="success" id="okMsg" data-i18n="form.ok">Merci ! Votre message a été envoyé.</div>
+          <div class="error" id="errMsg" data-i18n="form.err">Oups, vérifiez les champs et réessayez.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <footer>
+    <div class="socials">
+      <a href="mailto:jeanieraharivololona@gmail.com">Email</a>
+      <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/jeanie-raharivololona" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#home">Retour en haut</a>
+    </div>
+    <p>© <span id="year"></span> Jeanie Andrea Raharivololona · Antananarivo, Madagascar</p>
+  </footer>
 
   <script>
-    // Textes par langue
-    const i18n = {
-      en: {
-        role: "Community Manager & Digital Projects",
-        btnContact: "Contact me",
-        btnViewCV: "📄 View CV",
-        btnDownloadCV: "⬇️ Download CV",
-        navProfile: "Profile",
-        navSkills: "Key Skills",
-        navExperience: "Professional Experience",
-        navEducation: "Education",
-        navTech: "Technical Skills",
-        navLanguages: "Languages",
-        navInterests: "Interests",
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-        profileTitle: "Profile",
-        profileText: "Community Manager specialized in digital communication, content strategy, and data organization. Experienced in managing online communities, conducting competitive monitoring, and implementing marketing campaigns. Recognized for rigor, organizational skills, and adaptability. Open to B2B prospecting and data cleaning roles where accuracy and reliability are essential. Ready to support businesses with accurate data management and impactful digital strategies.",
-        skillsTitle: "Key Skills",
-        skillsText: "· Community Management & Digital Communication.<br>· Content Creation & Social Media Strategy.<br>· Competitive and Market Intelligence.<br>· Organization & Time Management.<br>· Data Cleaning & Database Management.<br>· Tools: Odoo ERP, Canva, Microsoft Office Suite (Word, Excel, PowerPoint), POS/TPE Handling.",
-        experienceTitle: "Professional Experience",
-        experienceRole: "<strong>Community Manager (Online)</strong> — July 2024 - Present",
-        experienceText: "· Conducted competitive and market monitoring to strengthen brand reputation.<br>· Developed and implemented marketing and communication strategies.<br>· Animated and engaged online communities across multiple platforms.<br>· Planned and scheduled posts to optimize visibility.<br>· Designed influence strategies to grow audience and impact.<br>· Data cleaning/organization.",
-        educationTitle: "Education",
-        educationText: "<strong>BTS in Business Management (2015–2016)</strong><br>· Business & Human Resources Management, Team Leadership, Professional Communication, Quality Management, Client Orientation.<br><br><strong>Baccalauréat Série A1 (2013)</strong>",
-        techTitle: "Technical Skills",
-        techText: "· Microsoft Office Suite (Word, Excel, PowerPoint).<br>· Odoo ERP System.<br>· Canva, Capcut, Shotcut (Design & Content Creation).<br>· POS/TPE Handling.<br>· Slack.",
-        languagesTitle: "Languages",
-        languagesText: "· French: Fluent<br>· English: Fluent",
-        interestsTitle: "Interests",
-        interestsText: "· Cooking | Singing | Traveling | Social Media",
-        footerText: "© 2025 Jeanie Andrea Raharivololona — Open to Community Management, Data Cleaning, and B2B Prospecting roles."
-      },
+    // Formulaire (front-only). En prod, connecte à Formspree / backend.
+    const form = document.getElementById('contactForm');
+    const okMsg = document.getElementById('okMsg');
+    const errMsg = document.getElementById('errMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errMsg.style.display = 'none';
+      okMsg.style.display = 'none';
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !validEmail || !message){
+        errMsg.style.display = 'block';
+        return;
+      }
+
+      // Exemple: envoi via mailto (ouvre le client mail)
+      const subject = encodeURIComponent('Contact Portfolio — ' + name);
+      const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:jeanieraharivololona@gmail.com?subject=${subject}&body=${body}`;
+
+      // Feedback visuel
+      okMsg.style.display = 'block';
+      form.reset();
+    });
+
+    // Contenu bilingue FR/EN
+    const dict = {
       fr: {
-        role: "Community Manager & Projets Digitaux",
-        btnContact: "Me contacter",
-        btnViewCV: "📄 Voir le CV",
-        btnDownloadCV: "⬇️ Télécharger le CV",
-        navProfile: "Profil",
-        navSkills: "Compétences clés",
-        navExperience: "Expérience professionnelle",
-        navEducation: "Formation",
-        navTech: "Compétences techniques",
-        navLanguages: "Langues",
-        navInterests: "Centres d’intérêt",
-
-        profileTitle: "Profil",
-        profileText: "Community Manager spécialisée en communication digitale, stratégie de contenu et organisation des données. Expérimentée dans la gestion de communautés en ligne, la veille concurrentielle et la mise en œuvre de campagnes marketing. Reconnue pour sa rigueur, son sens de l’organisation et son adaptabilité. Ouverte au prospecting B2B et aux missions de nettoyage de données où précision et fiabilité sont essentielles. Prête à accompagner les entreprises avec une gestion de données fiable et des stratégies digitales impactantes.",
-        skillsTitle: "Compétences clés",
-        skillsText: "· Community Management & Communication digitale.<br>· Création de contenu & Stratégie social media.<br>· Intelligence concurrentielle & marché.<br>· Organisation & Gestion du temps.<br>· Nettoyage de données & Gestion de bases.<br>· Outils : Odoo ERP, Canva, Suite Microsoft Office (Word, Excel, PowerPoint), Gestion POS/TPE.",
-        experienceTitle: "Expérience professionnelle",
-        experienceRole: "<strong>Community Manager (En ligne)</strong> — Juillet 2024 - Présent",
-        experienceText: "· Veille concurrentielle et de marché pour renforcer la réputation de marque.<br>· Développement et mise en œuvre de stratégies marketing et de communication.<br>· Animation et engagement des communautés en ligne sur plusieurs plateformes.<br>· Planification et programmation des publications pour optimiser la visibilité.<br>· Stratégies d’influence pour développer l’audience et l’impact.<br>· Nettoyage et organisation des données.",
-        educationTitle: "Formation",
-        educationText: "<strong>BTS en Management des Entreprises (2015–2016)</strong><br>· Gestion des RH, Leadership d’équipe, Communication professionnelle, Management de la qualité, Orientation client.<br><br><strong>Baccalauréat Série A1 (2013)</strong>",
-        techTitle: "Compétences techniques",
-        techText: "· Suite Microsoft Office (Word, Excel, PowerPoint).<br>· Système Odoo ERP.<br>· Canva, Capcut, Shotcut (Design & Création de contenu).<br>· Gestion POS/TPE.<br>· Slack.",
-        languagesTitle: "Langues",
-        languagesText: "· Français : Courant<br>· Anglais : Courant",
-        interestsTitle: "Centres d’intérêt",
-        interestsText: "· Cuisine | Chant | Voyage | Réseaux sociaux",
-        footerText: "© 2025 Jeanie Andrea Raharivololona — Ouverte au Community Management, Data Cleaning et Prospecting B2B."
+        "nav.home":"Accueil",
+        "nav.about":"À propos",
+        "nav.skills":"Compétences",
+        "nav.tools":"Outils",
+        "nav.projects":"Projets",
+        "nav.contact":"Contact",
+        "hero.title":"Community Manager social media — Spécialité Instagram & YouTube",
+        "hero.subtitle":"Je crée des contenus qui développent la visibilité, engagent les communautés et transforment l’attention en action.",
+        "hero.cta":"Discutons d’un projet",
+        "hero.download":"Télécharger mon CV (EN)",
+        "hero.stat1.title":"Portée",
+        "hero.stat1.body":"d’abonnés en 18 mois (TrueConvos)",
+        "hero.stat2.title":"Spécialités",
+        "hero.stat3.title":"Secteurs",
+        "hero.stat4.title":"Langues",
+        "about.title":"À propos de moi",
+        "about.body":"Community manager passionnée par la création de contenus engageants. J’aide les marques à développer leur visibilité et leur communauté sur les réseaux sociaux, avec un focus sur Instagram et YouTube.",
+        "skills.title":"Compétences clés",
+        "skills.1":"Gestion de pages Instagram et YouTube",
+        "skills.2":"Création de contenu (posts, storytelling, reels)",
+        "skills.3":"Rédaction de légendes engageantes",
+        "skills.4":"Calendrier éditorial",
+        "skills.5":"Analyse des statistiques",
+        "skills.6":"Modération et réponses aux messages",
+        "tools.title":"Outils utilisés",
+        "projects.title":"Projet & réalisation",
+        "projects.role":"Rôle : Community Manager Social Media",
+        "projects.goal":"Objectif : Guider les utilisateurs vers la méditation, favoriser la paix intérieure et inciter les abonnés à rejoindre le groupe de méditation TrueConvos.",
+        "projects.result":"Résultat : +30 % d’abonnés en 18 mois",
+        "projects.preview":"Aperçu visuel — Avant / Après",
+        "contact.title":"Contact",
+        "contact.email.label":"Email :",
+        "form.name":"Nom",
+        "form.email":"Email",
+        "form.message":"Message",
+        "form.submit":"Envoyer",
+        "form.reset":"Réinitialiser",
+        "form.ok":"Merci ! Votre message a été envoyé.",
+        "form.err":"Oups, vérifiez les champs et réessayez."
       },
-      de: {
-        role: "Community Managerin & Digitale Projekte",
-        btnContact: "Kontakt",
-        btnViewCV: "📄 Lebenslauf ansehen",
-        btnDownloadCV: "⬇️ Lebenslauf herunterladen",
-        navProfile: "Profil",
-        navSkills: "Kernkompetenzen",
-        navExperience: "Berufserfahrung",
-        navEducation: "Ausbildung",
-        navTech: "Technische Fähigkeiten",
-        navLanguages: "Sprachen",
-        navInterests: "Interessen",
-
-        profileTitle: "Profil",
-        profileText: "Community Managerin spezialisiert auf digitale Kommunikation, Content-Strategie und Datenorganisation. Erfahrung in der Verwaltung von Online-Communities, Wettbewerbsbeobachtung und Umsetzung von Marketingkampagnen. Anerkannt für Genauigkeit, Organisationsfähigkeit und Anpassungsfähigkeit. Offen für B2B-Akquise und Datenbereinigung, wo Genauigkeit und Zuverlässigkeit entscheidend sind. Bereit, Unternehmen mit präzisem Datenmanagement und wirkungsvollen digitalen Strategien zu unterstützen.",
-        skillsTitle: "Kernkompetenzen",
-        skillsText: "· Community Management & Digitale Kommunikation.<br>· Content-Erstellung & Social-Media-Strategie.<br>· Wettbewerbs- und Markt-Intelligence.<br>· Organisation & Zeitmanagement.<br>· Datenbereinigung & Datenbankmanagement.<br>· Tools: Odoo ERP, Canva, Microsoft Office (Word, Excel, PowerPoint), POS/TPE.",
-        experienceTitle: "Berufserfahrung",
-        experienceRole: "<strong>Community Managerin (Online)</strong> — Juli 2024 - Heute",
-        experienceText: "· Wettbewerbs- und Marktbeobachtung zur Stärkung der Markenreputation.<br>· Entwicklung und Umsetzung von Marketing- und Kommunikationsstrategien.<br>· Aktivierung und Engagement von Online-Communities auf mehreren Plattformen.<br>· Planung und Terminierung von Beiträgen zur Sichtbarkeitsoptimierung.<br>· Influencer-Strategien zur Reichweitensteigerung.<br>· Datenbereinigung/-organisation.",
-        educationTitle: "Ausbildung",
-        educationText: "<strong>BTS in Unternehmensmanagement (2015–2016)</strong><br>· Personalmanagement, Teamführung, Professionelle Kommunikation, Qualitätsmanagement, Kundenorientierung.<br><br><strong>Abitur Serie A1 (2013)</strong>",
-        techTitle: "Technische Fähigkeiten",
-        techText: "· Microsoft Office (Word, Excel, PowerPoint).<br>· Odoo ERP System.<br>· Canva, Capcut, Shotcut (Design & Content).<br>· POS/TPE.<br>· Slack.",
-        languagesTitle: "Sprachen",
-        languagesText: "· Französisch: Fließend<br>· Englisch: Fließend",
-        interestsTitle: "Interessen",
-        interestsText: "· Kochen | Singen | Reisen | Soziale Medien",
-        footerText: "© 2025 Jeanie Andrea Raharivololona — Offen für Community Management, Datenbereinigung und B2B-Akquise."
+      en: {
+        "nav.home":"Home",
+        "nav.about":"About",
+        "nav.skills":"Skills",
+        "nav.tools":"Tools",
+        "nav.projects":"Projects",
+        "nav.contact":"Contact",
+        "hero.title":"Social media Community Manager — Instagram & YouTube Specialist",
+        "hero.subtitle":"I craft content that grows visibility, engages communities, and turns attention into action.",
+        "hero.cta":"Let’s talk",
+        "hero.download":"Download my CV (EN)",
+        "hero.stat1.title":"Reach",
+        "hero.stat1.body":"followers in 18 months (TrueConvos)",
+        "hero.stat2.title":"Specialties",
+        "hero.stat3.title":"Sectors",
+        "hero.stat4.title":"Languages",
+        "about.title":"About me",
+        "about.body":"Community manager passionate about engaging content. I help brands grow visibility and communities on social platforms, focusing on Instagram and YouTube.",
+        "skills.title":"Key skills",
+        "skills.1":"Instagram and YouTube page management",
+        "skills.2":"Content creation (posts, storytelling, reels)",
+        "skills.3":"Engaging caption writing",
+        "skills.4":"Editorial calendar",
+        "skills.5":"Analytics",
+        "skills.6":"Moderation and replies",
+        "tools.title":"Tools",
+        "projects.title":"Project & achievement",
+        "projects.role":"Role: Social Media Community Manager",
+        "projects.goal":"Goal: Guide users into meditation, foster inner peace, and invite them to join the TrueConvos meditation group.",
+        "projects.result":"Result: +30% followers in 18 months",
+        "projects.preview":"Visual preview — Before / After",
+        "contact.title":"Contact",
+        "contact.email.label":"Email:",
+        "form.name":"Name",
+        "form.email":"Email",
+        "form.message":"Message",
+        "form.submit":"Send",
+        "form.reset":"Reset",
+        "form.ok":"Thanks! Your message was sent.",
+        "form.err":"Please check the fields and try again."
       }
     };
 
-    // Elements à mettre à jour
-    const el = {
-      role: document.getElementById('role'),
-      btnContact: document.getElementById('btnContact'),
-      btnViewCV: document.getElementById('btnViewCV'),
-      btnDownloadCV: document.getElementById('btnDownloadCV'),
+    let currentLang = 'fr';
+    const toggle = document.getElementById('langToggle');
 
-      navProfile: document.getElementById('navProfile'),
-      navSkills: document.getElementById('navSkills'),
-      navExperience: document.getElementById('navExperience'),
-      navEducation: document.getElementById('navEducation'),
-      navTech: document.getElementById('navTech'),
-      navLanguages: document.getElementById('navLanguages'),
-      navInterests: document.getElementById('navInterests'),
+    function applyLang(lang){
+      currentLang = lang;
+      document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
 
-      profileTitle: document.getElementById('profileTitle'),
-      profileText: document.getElementById('profileText'),
-      skillsTitle: document.getElementById('skillsTitle'),
-      skillsText: document.getElementById('skillsText'),
-      experienceTitle: document.getElementById('experienceTitle'),
-      experienceRole: document.getElementById('experienceRole'),
-      experienceText: document.getElementById('experienceText'),
-      educationTitle: document.getElementById('educationTitle'),
-      educationText: document.getElementById('educationText'),
-      techTitle: document.getElementById('techTitle'),
-      techText: document.getElementById('techText'),
-      languagesTitle: document.getElementById('languagesTitle'),
-      languagesText: document.getElementById('languagesText'),
-      interestsTitle: document.getElementById('interestsTitle'),
-      interestsText: document.getElementById('interestsText'),
-      footerText: document.getElementById('footerText')
-    };
-
-    function setLang(lang) {
-      const t = i18n[lang];
-      // Mettre à jour le texte
-      el.role.textContent = t.role;
-      el.btnContact.textContent = t.btnContact;
-      el.btnViewCV.textContent = t.btnViewCV;
-      el.btnDownloadCV.textContent = t.btnDownloadCV;
-
-      el.navProfile.textContent = t.navProfile;
-      el.navSkills.textContent = t.navSkills;
-      el.navExperience.textContent = t.navExperience;
-      el.navEducation.textContent = t.navEducation;
-      el.navTech.textContent = t.navTech;
-      el.navLanguages.textContent = t.navLanguages;
-      el.navInterests.textContent = t.navInterests;
-
-      el.profileTitle.textContent = t.profileTitle;
-      el.profileText.innerHTML = t.profileText;
-      el.skillsTitle.textContent = t.skillsTitle;
-      el.skillsText.innerHTML = t.skillsText;
-      el.experienceTitle.textContent = t.experienceTitle;
-      el.experienceRole.innerHTML = t.experienceRole;
-      el.experienceText.innerHTML = t.experienceText;
-      el.educationTitle.textContent = t.educationTitle;
-      el.educationText.innerHTML = t.educationText;
-      el.techTitle.textContent = t.techTitle;
-      el.techText.innerHTML = t.techText;
-      el.languagesTitle.textContent = t.languagesTitle;
-      el.languagesText.innerHTML = t.languagesText;
-      el.interestsTitle.textContent = t.interestsTitle;
-      el.interestsText.innerHTML = t.interestsText;
-      el.footerText.textContent = t.footerText;
-
-      // UI état des boutons
-      document.querySelectorAll('.lang-toggle button').forEach(b => {
-        const active = b.dataset.lang === lang;
-        b.classList.toggle('active', active);
-        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const text = dict[lang][key];
+        if (text) el.textContent = text;
       });
-      document.documentElement.lang = lang;
+
+      // Marque
+      document.getElementById('brand-role').textContent =
+        lang==='fr' ? 'Community Manager & Digital Projects Specialist' : 'Community Manager & Digital Projects Specialist';
+      toggle.textContent = lang==='fr' ? 'FR / EN' : 'EN / FR';
     }
 
-    // Listeners
-    document.querySelectorAll('.lang-toggle button').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    toggle.addEventListener('click', ()=>{
+      applyLang(currentLang==='fr' ? 'en' : 'fr');
     });
 
-    // Initialisation
-    setLang('en');
+    applyLang('fr');
   </script>
+ <script>
+  const sliders = document.querySelectorAll('.slider.fade');
+  sliders.forEach(slider => {
+    let slides = slider.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((s, j) => s.classList.toggle('active', j === i));
+    }
+
+    showSlide(index);
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 3000); // change toutes les 3 secondes
+  });
+</script>
+
+
 </body>
 </html>
-
